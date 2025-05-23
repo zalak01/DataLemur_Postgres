@@ -1,0 +1,7 @@
+https://datalemur.com/questions/matching-skills
+
+select candidate_id
+from candidates
+where skill = 'Python' or skill = 'Tableau' or skill= 'PostgreSQL'
+group by candidate_id
+having count(skill) = 3
