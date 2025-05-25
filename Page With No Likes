@@ -1,0 +1,24 @@
+https://datalemur.com/questions/sql-page-with-no-likes
+
+-- select pg.page_id
+-- from pages pg 
+-- left join page_likes pl 
+-- on pg.page_id = pl.page_id
+-- where liked_date is NULL
+
+
+-- SELECT pg.page_id
+-- FROM pages pg
+-- WHERE NOT EXISTS (
+--   SELECT 1
+--   FROM page_likes pl
+--   WHERE pl.page_id = pg.page_id
+-- )
+-- order by  pg.page_id desc;
+
+
+select p.page_id
+from pages p left join page_likes pl
+on p.page_id = pl.page_id
+where pl.page_id is NULL
+order by 1
