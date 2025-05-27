@@ -1,0 +1,5 @@
+https://github.com/zalak01/DataLemur_Postgres/new/main
+
+select  sum(case when device_type = 'laptop' then 1 else 0 end) as "laptop_views",
+       sum(case when device_type = 'phone' or device_type = 'tablet' then 1 else 0 end) as "mobile_views"
+from viewership
