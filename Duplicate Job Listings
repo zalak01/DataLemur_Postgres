@@ -1,0 +1,10 @@
+https://datalemur.com/questions/duplicate-job-listings
+
+SELECT count(company_id)
+FROM
+(
+select company_id, title, description
+from job_listings
+group by company_id, title, description
+having count(job_id) > 1
+) TEMP
